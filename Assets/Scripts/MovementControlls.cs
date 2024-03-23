@@ -3,27 +3,32 @@ using UnityEngine;
 public class MovementControlls : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float HorizontalSpeed = 0;
-    private float VerticalSpeed = 0;
+    private float HorizontalSpeed;
+    private float VerticalSpeed;
     [SerializeField] private float speed = 5;
-    //private Animator animator;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
+
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody2D component is missing!");
+            enabled = false; // Отключаем компонент, если Rigidbody2D не найден
+        }
     }
 
-    // Update is called once per frame
-    private void FixedUpdate() {
-        Run();
-    }
-    
-    private void Run()
+    private void FixedUpdate()
     {
-        HorizontalSpeed = Input.GetAxisRaw("Horizontal") * speed;
-        VerticalSpeed = Input.GetAxisRaw("Vertical") * speed;
-        Vector2 TargetVelocity = new Vector2(HorizontalSpeed, VerticalSpeed);
-        rb.velocity = TargetVelocity.normalized * speed;
+        HandleMovement();
+    }
+
+    private void HandleMovement()
+    {
+        
+        HorizontalSpeed = Input.GetAxisRaw("Horizontal");
+        VerticalSpeed = Input.GetAxisRaw("Vertical");
+        Vector2 movement = new Vector2(HorizontalSpeed, VerticalSpeed).normalized * speed * Time.deltaTime;
+        rb.MovePosition(rb.position + movement);
     }
 }

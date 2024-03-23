@@ -13,7 +13,7 @@ public class CameraTracking : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         pos = player.position;
         pos.z = -10;
