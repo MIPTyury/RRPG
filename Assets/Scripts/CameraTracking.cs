@@ -4,19 +4,21 @@ public class CameraTracking : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    private Vector3 pos;
-    // Start is called before the first frame update
     private void Awake()
     {
-        if (!player)
-            player = FindObjectOfType<MovementControlls>().transform; 
+        if (player == null)
+        {
+            Debug.LogError("Player transform is not set in CameraTracking.");
+            enabled = false; // Отключаем скрипт, чтобы избежать ошибок
+        }
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    private void LateUpdate()
     {
-        pos = player.position;
-        pos.z = -10;
-        transform.position = pos;
+        if (player != null)
+        {
+            // Устанавливаем позицию камеры равной позиции игрока
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        }
     }
 }
