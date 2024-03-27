@@ -36,12 +36,7 @@ namespace Runtime
 
             data.AttachView(view);
 
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
-
-            Vector3 moveDir = new Vector3(moveX, moveY, 0).normalized;
-
-            view.transform.Translate(moveDir * asset.speed * Time.deltaTime);
+            Game.Runtime.PlayerSpawned(data, view);
         }
     }
     

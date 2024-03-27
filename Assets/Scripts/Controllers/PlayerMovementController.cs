@@ -1,6 +1,6 @@
 using Assets;
 using Player;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace Runtime
@@ -35,7 +35,7 @@ namespace Runtime
 
             Vector3 moveDir = new Vector3(moveX, moveY, 0).normalized;
 
-            asset.ViewPrefab.transform.Translate(moveDir * asset.speed * Time.deltaTime);
+            Game.Runtime.PlayerView.transform.Translate(moveDir * asset.speed * Time.deltaTime);
         }
     }
     
