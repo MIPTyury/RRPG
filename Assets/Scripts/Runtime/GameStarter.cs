@@ -15,8 +15,7 @@ namespace Runtime
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Debug.Log("You pressed Space");
+            if (Input.GetKeyDown(KeyCode.Mouse0)) {
                 Game.InitCurrentLocation(m_AssetRoot.Locations[0]);
             }
         }

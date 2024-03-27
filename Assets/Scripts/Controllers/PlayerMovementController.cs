@@ -1,6 +1,4 @@
 using Assets;
-using Player;
-using UnityEditor;
 using UnityEngine;
 
 namespace Runtime
