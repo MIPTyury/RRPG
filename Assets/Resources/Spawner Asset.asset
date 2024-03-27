@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039d6ccf40f8a344994f213043194904, type: 3}
-  m_Name: Player Asset
+  m_Script: {fileID: 11500000, guid: 8ed67d5e8be67f543bbf9f2f408df761, type: 3}
+  m_Name: Spawner Asset
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  maxMana: 100
-  maxStamina: 100
-  speed: 5
-  ViewPrefab: {fileID: 8972981598349976560, guid: e21dfb09423781b4b93705d3474c7e6a, type: 3}
+  PlayerAsset: {fileID: 11400000, guid: d9754668248177e498bcf0e6b9794e70, type: 2}

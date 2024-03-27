@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b649ba5f021c8a45afbed43fc91ecda, type: 3}
   m_Name: Location
   m_EditorClassIdentifier: 
+  SceneAsset: {fileID: 102900000, guid: 301295fa4fbb007428fc588b83a32028, type: 3}
+  PlayerSpawnerAsset: {fileID: 11400000, guid: 99ea756c89946674e9550f22e6408bed, type: 2}
   EnemyTypes:
   - {fileID: 11400000, guid: cb9949b86b307e545baa182bc104eace, type: 2}
