@@ -4,7 +4,11 @@ using Assets;
 namespace Player
 {
     public class PlayerData
-    {
+    {   
+        private PlayerView m_PlayerView;
+
+        public PlayerView PlayerView => m_PlayerView;
+
         public float maxHealth;
         public float currentHealth;
         public float maxMana;
@@ -12,8 +16,6 @@ namespace Player
         public float maxStamina;
         public float currentStamina;
         public float speed;
-
-
 
         public PlayerData(PlayerAsset asset) {
             maxHealth = asset.maxHealth;
@@ -23,6 +25,14 @@ namespace Player
             maxStamina = asset.maxStamina;
             currentStamina = maxStamina;
             speed = asset.speed;
+
+            m_PlayerView = asset.ViewPrefab;
+        }
+
+        public void AttachView(PlayerView view)
+        {
+            m_PlayerView = view;
+            m_PlayerView.AttachData(this);
         }
 
     }

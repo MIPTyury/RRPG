@@ -1,23 +1,14 @@
 using UnityEngine;
 
-namespace Controllers 
+namespace Runtime
 {
-    public interface Icontroller
+    public interface IController
     {
-        public void OnStart() 
-        {
+        public void OnStart();
 
-        }
+        public void OnStop();
 
-        public void OnStop()
-        {
-
-        }
-
-        public void OnTick()
-        {
-
-        }
+        public void OnTick();
 
     } 
 }
