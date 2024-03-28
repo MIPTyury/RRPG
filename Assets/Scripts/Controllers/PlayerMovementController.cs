@@ -8,7 +8,7 @@ namespace Runtime
     {   
         private PlayerSpawnerAsset m_PlayerSpawnerAsset;
         private Animator m_Animator;
-        private Dictionary<Vector2, float> angleToMoveDirection = new Dictionary<Vector2, float>();
+        private Dictionary<Vector2, int> angleToMoveDirection = new Dictionary<Vector2, int>();
 
         public PlayerMovementController (PlayerSpawnerAsset PlayerSpawnerAsset)
         {
@@ -51,17 +51,17 @@ namespace Runtime
             float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
             angle = (angle < 0) ? angle + 360 : angle;
 
-            float moveDirectionValue = GetMoveDirectionValue(angle);
+            int moveDirectionValue = GetMoveDirectionValue(angle);
 
             if (moveDir.y == 0  && moveDir.x == 0)
             {
                 moveDirectionValue = 0;
             }
 
-            m_Animator.SetFloat("moveDirection", moveDirectionValue);
+            m_Animator.SetInteger("Dir", moveDirectionValue);
         }
 
-        private float GetMoveDirectionValue(float angle)
+        private int GetMoveDirectionValue(float angle)
         {   
             if (angle == 0)
             {
