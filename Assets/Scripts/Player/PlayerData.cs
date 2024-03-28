@@ -1,4 +1,3 @@
-using UnityEngine;
 using Assets;
 
 namespace Player
@@ -17,7 +16,8 @@ namespace Player
         public float currentStamina;
         public float speed;
 
-        public PlayerData(PlayerAsset asset) {
+        public PlayerData(PlayerAsset asset) 
+        {
             maxHealth = asset.maxHealth;
             currentHealth = maxHealth;
             maxMana = asset.maxMana;

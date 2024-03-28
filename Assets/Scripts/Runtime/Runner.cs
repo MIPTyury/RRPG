@@ -39,6 +39,7 @@ namespace Runtime
                 new PlayerSpawnController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new PlayerMovementController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new CameraController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new EnemySpawnController(Game.CurrentLocation.EnemyTypes),
             };
         }
 

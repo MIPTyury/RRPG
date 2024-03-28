@@ -16,3 +16,4 @@ MonoBehaviour:
   PlayerSpawnerAsset: {fileID: 11400000, guid: 99ea756c89946674e9550f22e6408bed, type: 2}
   EnemyTypes:
   - {fileID: 11400000, guid: cb9949b86b307e545baa182bc104eace, type: 2}
+  - {fileID: 11400000, guid: 8681bd1702869b648bd1e782e7e6033d, type: 2}

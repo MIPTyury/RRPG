@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85142aeebb3ac024199805c8a0f68d67, type: 3}
   m_Name: EnemyType Asset
   m_EditorClassIdentifier: 
-  Enemy:
-  - {fileID: 11400000, guid: d450edfe904b67f4bbfcf692d7e1509f, type: 2}
+  EnemyType: {fileID: 11400000, guid: d450edfe904b67f4bbfcf692d7e1509f, type: 2}

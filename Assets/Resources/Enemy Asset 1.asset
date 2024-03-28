@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d411baa5053c9324182afd1d9c2a3e83, type: 3}
-  m_Name: Enemy Asset
+  m_Name: Enemy Asset 1
   m_EditorClassIdentifier: 
   maxHealth: 15
-  Position: {x: 15, y: 0, z: 0}
-  ViewPrefab: {fileID: -6906207490590633799, guid: 51c0d6e0dba9c9849a078cab6dd5087c, type: 3}
+  Position: {x: 30, y: 0, z: 0}
+  ViewPrefab: {fileID: -6906207490590633799, guid: b0de0898445c58e4fb2a5a9311903896, type: 3}
