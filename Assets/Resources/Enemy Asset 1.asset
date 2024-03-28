@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Asset 1
   m_EditorClassIdentifier: 
   maxHealth: 15
-  Position: {x: 30, y: 0, z: 0}
+  Position: {x: 14, y: 0, z: 0}
   ViewPrefab: {fileID: -6906207490590633799, guid: b0de0898445c58e4fb2a5a9311903896, type: 3}
