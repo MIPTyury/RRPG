@@ -52,7 +52,11 @@ namespace Runtime
             angle = (angle < 0) ? angle + 360 : angle;
 
             float moveDirectionValue = GetMoveDirectionValue(angle);
-            Debug.Log(angle);
+
+            if (moveDir.y == 0  && moveDir.x == 0)
+            {
+                moveDirectionValue = 0;
+            }
 
             m_Animator.SetFloat("moveDirection", moveDirectionValue);
         }

@@ -15,5 +15,5 @@ MonoBehaviour:
   maxHealth: 100
   maxMana: 100
   maxStamina: 100
-  speed: 5
+  speed: 2.5
   ViewPrefab: {fileID: 8972981598349976560, guid: e21dfb09423781b4b93705d3474c7e6a, type: 3}
