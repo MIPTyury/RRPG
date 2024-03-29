@@ -6,13 +6,7 @@ namespace Runtime
 {
     public class CameraController : IController
     {   
-        private PlayerSpawnerAsset m_PlayerSpawnerAsset;
         private Camera m_Camera;
-
-        public CameraController (PlayerSpawnerAsset PlayerSpawnerAsset)
-        {
-            m_PlayerSpawnerAsset = PlayerSpawnerAsset;
-        }
         public void OnStart() 
         {
             m_Camera = Object.FindObjectOfType<Camera>();
@@ -25,14 +19,14 @@ namespace Runtime
 
         public void OnTick () 
         {
-            TrackPlayer(m_PlayerSpawnerAsset.PlayerAsset, m_Camera);
+            TrackPlayer();
         }
 
-        private void TrackPlayer(PlayerAsset asset, Camera camera)
+        private void TrackPlayer()
         {   
             UnityEngine.Vector3 PlayerPos = Game.Runtime.PlayerView.transform.position;
-            UnityEngine.Vector3 CameraPos = new UnityEngine.Vector3(PlayerPos.x, PlayerPos.y, PlayerPos.z - 10f);
-            m_Camera.transform.position = CameraPos;
+            m_Camera.transform.position = UnityEngine.Vector3.Lerp(m_Camera.transform.position, PlayerPos, 2*Time.deltaTime);
+            m_Camera.transform.position = new UnityEngine.Vector3(m_Camera.transform.position.x, m_Camera.transform.position.y, -10);
         }
     }
     
