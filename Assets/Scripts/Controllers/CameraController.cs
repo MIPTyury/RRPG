@@ -1,20 +1,19 @@
-using System.Numerics;
-using Assets;
 using UnityEngine;
+using Cinemachine;
 
 namespace Runtime
 {
     public class CameraController : IController
     {   
-        private Camera m_Camera;
+        private CinemachineVirtualCamera m_CinemachineVirtualCamera;
         public void OnStart() 
         {
-            m_Camera = Object.FindObjectOfType<Camera>();
+            m_CinemachineVirtualCamera = Object.FindObjectOfType<CinemachineVirtualCamera>();
         }
 
         public void OnStop() 
         {
-            // Debug.Log("OnStop was called");
+            
         }
 
         public void OnTick () 
@@ -24,9 +23,7 @@ namespace Runtime
 
         private void TrackPlayer()
         {   
-            UnityEngine.Vector3 PlayerPos = Game.Runtime.PlayerView.transform.position;
-            m_Camera.transform.position = UnityEngine.Vector3.Lerp(m_Camera.transform.position, PlayerPos, 2*Time.deltaTime);
-            m_Camera.transform.position = new UnityEngine.Vector3(m_Camera.transform.position.x, m_Camera.transform.position.y, -10);
+            m_CinemachineVirtualCamera.Follow = Game.Runtime.PlayerView.transform;
         }
     }
     
