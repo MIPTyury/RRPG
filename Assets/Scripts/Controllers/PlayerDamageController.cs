@@ -31,7 +31,7 @@ namespace Runtime
         {
             GiveDamage();
         }
-        private void GiveDamage()
+        private void GiveDamage() 
         {   
             if (Input.GetKeyDown(KeyCode.Mouse0)) 
             {
@@ -46,13 +46,11 @@ namespace Runtime
             
             foreach (Collider2D enemy in hitEnemies)
             {
-                if (enemy.TryGetComponent(out Enemy.EnemyView view))
-                {
-                    if (Game.Runtime.Enemies.TryGetValue(view, out EnemyData enemyData))
-                    {
-                        enemyData.currentHealth -= m_PlayerSpawnerAsset.PlayerAsset.WeaponAsset.damage;
-                    }
-                }
+                EnemyView view = enemy.gameObject.GetComponent<EnemyView>();
+                EnemyData data = Game.Runtime.Enemies[view];
+                
+                data.currentHealth -= m_PlayerSpawnerAsset.PlayerAsset.WeaponAsset.damage;
+                Debug.Log($"{view.gameObject.name} - {data.currentHealth} ----- {hitEnemies.Length}");
             } 
         }
     }

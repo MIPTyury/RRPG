@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0957910bca58eb4d9e0317c66e49891, type: 3}
-  m_Name: Weapon Asset
+  m_Name: Big Sword
   m_EditorClassIdentifier: 
-  m_name: "\u041C\u0435\u0447"
-  damage: 5
-  AttackRange: 0.5
+  m_name: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u041C\u0435\u0447"
+  damage: 10
+  AttackRange: 1

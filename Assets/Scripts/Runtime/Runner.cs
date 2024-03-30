@@ -89,6 +89,10 @@ namespace Runtime
             }
         }
 
-
+        //Для проверки работоспособности, потом убрать!!!
+        public void SpawnEnemy()
+        {
+            m_Controllers[3].OnStart();
+        }
     }
 }

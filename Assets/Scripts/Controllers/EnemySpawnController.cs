@@ -36,7 +36,7 @@ namespace Runtime
         {
             EnemyView view = Object.Instantiate(asset.ViewPrefab);
             view.transform.position = asset.Position;
-            EnemyData data = new EnemyData(asset);
+            EnemyData data = new(asset);
 
             data.AttachView(view);
 
