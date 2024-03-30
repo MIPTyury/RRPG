@@ -20,12 +20,13 @@ namespace Runtime
 
         public void OnStart() 
         {
+            Debug.Log(m_WeaponAsset.m_name);
             SetWeaponData();
         }
 
         public void OnStop() 
         {
-            // Debug.Log("OnStop was called");
+
         }
 
         public void OnTick () 
@@ -34,7 +35,7 @@ namespace Runtime
         }
 
         public void SetWeaponData()
-        {
+        {   
             WeaponData data = new WeaponData(m_WeaponAsset);
 
             Game.Runtime.SetWeapon(data);

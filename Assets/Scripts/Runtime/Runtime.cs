@@ -3,7 +3,6 @@ using Enemy;
 using Player;
 using UnityEngine;
 using Weapons;
-using Assets;
 using Skills;
 
 namespace Runtime
@@ -18,7 +17,7 @@ namespace Runtime
         private PlayerData m_PlayerData;
         private PlayerView m_PlayerView;
 
-        private List<WeaponData> m_WeaponData;
+        private List<WeaponData> m_WeaponData = new List<WeaponData>();
         private Transform m_CameraTransform;
 
         public PlayerData PlayerData => m_PlayerData;

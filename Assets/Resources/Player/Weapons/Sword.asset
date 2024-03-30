@@ -15,3 +15,4 @@ MonoBehaviour:
   m_name: "\u041C\u0435\u0447"
   damage: 5
   AttackRange: 0.6
+  SkillAsset: {fileID: 11400000, guid: d79e947dd54c9aa4e9dd55fb5029558e, type: 2}

@@ -8,7 +8,7 @@ namespace Weapons
         private string m_name;
         private float m_damage;
         private float m_AttackRange;
-        private List<SkillAsset> m_SkillAsset;
+        private SkillAsset m_SkillAsset;
 
         public string Name => m_name;
 
@@ -16,7 +16,7 @@ namespace Weapons
 
         public float AttackRange => m_AttackRange;
 
-        public List<SkillAsset> SkillAsset => m_SkillAsset;
+        public SkillAsset SkillAsset => m_SkillAsset;
 
         public WeaponData(WeaponAsset asset) 
         {
@@ -26,7 +26,7 @@ namespace Weapons
             m_SkillAsset = asset.SkillAsset;
         }
 
-        public void AttachSkillList(List<SkillAsset> asset)
+        public void AttachSkillList(SkillAsset asset)
         {
             m_SkillAsset = asset;
         }
