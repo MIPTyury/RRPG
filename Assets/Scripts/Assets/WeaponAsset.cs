@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets
@@ -10,6 +11,7 @@ namespace Assets
         public float damage;
 
         public float AttackRange;
-        
+
+        public SkillAsset SkillAsset;
     }
 }

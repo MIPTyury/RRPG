@@ -41,7 +41,11 @@ namespace Runtime
                 new CameraController(),
                 new EnemySpawnController(Game.CurrentLocation.EnemyTypes),
                 new PlayerGiveDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new WeaponHolderController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new SkillUsageController(Game.CurrentLocation.PlayerSpawnerAsset),
             };
+
+            // Debug.Log($"WEAPON --------- {Game.Runtime.PlayerData.Weapon}");
         }
 
         private void OnStartControllers()

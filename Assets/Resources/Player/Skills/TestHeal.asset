@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0957910bca58eb4d9e0317c66e49891, type: 3}
-  m_Name: Knife
+  m_Script: {fileID: 11500000, guid: 025a1a80fd0ffa044b980408999e8d61, type: 3}
+  m_Name: TestHeal
   m_EditorClassIdentifier: 
-  m_name: "\u041A\u0438\u043D\u0436\u0430\u043B"
-  damage: 1
-  AttackRange: 0.1
-  SkillAsset:
-  - {fileID: 11400000, guid: d79e947dd54c9aa4e9dd55fb5029558e, type: 2}
+  m_name: Heal
+  skillType: Heal
+  damage: 0
+  heal: 20
+  Sprite: {fileID: 21300000, guid: b0bdb94df52e66d41866fb809a3c7af7, type: 3}

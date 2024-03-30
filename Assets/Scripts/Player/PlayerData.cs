@@ -1,13 +1,14 @@
 using Assets;
+using Runtime;
 
 namespace Player
 {
     public class PlayerData
     {   
         private PlayerView m_PlayerView;
-        private WeaponAsset m_Weapon;
+        private WeaponAsset m_weapon;
         public PlayerView PlayerView => m_PlayerView;
-        public WeaponAsset Weapon => m_Weapon;
+        public WeaponAsset Weapon => m_weapon;
 
         public float maxHealth;
         public float currentHealth;
@@ -17,8 +18,6 @@ namespace Player
         public float currentStamina;
         public float speed;
         
-        
-
         public PlayerData(PlayerAsset asset) 
         {
             maxHealth = asset.maxHealth;
@@ -28,7 +27,7 @@ namespace Player
             maxStamina = asset.maxStamina;
             currentStamina = maxStamina;
             speed = asset.speed;
-            m_Weapon = asset.WeaponAsset;
+            m_weapon = asset.WeaponAsset;
 
             m_PlayerView = asset.ViewPrefab;
         }
