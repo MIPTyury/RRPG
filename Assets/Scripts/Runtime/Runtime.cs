@@ -9,6 +9,8 @@ namespace Runtime
     {
         private List<EnemyData> m_EnemyDatas = new List<EnemyData>();
         private List<EnemyView> m_EnemyViews = new List<EnemyView>();
+
+        private Dictionary<EnemyView, EnemyData> m_Enemies = new Dictionary<EnemyView, EnemyData>();
         private PlayerData m_PlayerData;
         private PlayerView m_PlayerView;
 
@@ -16,8 +18,9 @@ namespace Runtime
 
         public PlayerData PlayerData => m_PlayerData;
         public PlayerView PlayerView => m_PlayerView;
-        public IReadOnlyList<EnemyData> EnemyDatas => m_EnemyDatas;
-        public IReadOnlyList<EnemyView> EnemyViews => m_EnemyViews;
+        // public IReadOnlyList<EnemyData> EnemyDatas => m_EnemyDatas;
+        // public IReadOnlyList<EnemyView> EnemyViews => m_EnemyViews;
+        public IReadOnlyDictionary<EnemyView, EnemyData> Enemies => m_Enemies;
 
         public Transform CameraTransform => m_CameraTransform;
 
@@ -29,8 +32,7 @@ namespace Runtime
 
         public void EnemySpawned(EnemyData data, EnemyView view)
         {
-            m_EnemyDatas.Add(data);
-            m_EnemyViews.Add(view);
+            m_Enemies[view] = data;
         }
 
 

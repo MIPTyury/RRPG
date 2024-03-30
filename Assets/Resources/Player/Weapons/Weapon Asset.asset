@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: "\u041C\u0435\u0447"
   damage: 5
+  AttackRange: 0.5

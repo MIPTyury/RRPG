@@ -8,6 +8,8 @@ namespace Assets
         public string m_name;
 
         public float damage;
+
+        public float AttackRange;
         
     }
 }

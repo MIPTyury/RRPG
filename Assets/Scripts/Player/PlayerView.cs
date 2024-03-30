@@ -12,5 +12,10 @@ namespace Player
         {
             m_PlayerData = data;
         }
+        
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawWireSphere(transform.Find("AttackPoint").transform.position, m_PlayerData.Weapon.AttackRange);
+        }
     }
 }

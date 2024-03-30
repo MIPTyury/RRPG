@@ -56,6 +56,8 @@ namespace Runtime
             if (moveDir.y == 0  && moveDir.x == 0)
             {
                 moveDirectionValue = 0;
+                m_Animator.SetInteger("Dir", moveDirectionValue);
+                return;
             }
 
             m_Animator.SetInteger("Dir", moveDirectionValue);

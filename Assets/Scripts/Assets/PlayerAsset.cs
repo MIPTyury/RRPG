@@ -11,7 +11,7 @@ namespace Assets
         public float maxStamina;
         public float speed;
          
-        public WeaponAsset weaponAsset;
+        public WeaponAsset WeaponAsset;
         public PlayerView ViewPrefab;
     }
 }

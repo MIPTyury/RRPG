@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d411baa5053c9324182afd1d9c2a3e83, type: 3}
   m_Name: Enemy Asset
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 45
   Position: {x: 7, y: 0, z: 0}
   ViewPrefab: {fileID: -6906207490590633799, guid: 51c0d6e0dba9c9849a078cab6dd5087c, type: 3}

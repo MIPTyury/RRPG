@@ -1,4 +1,5 @@
 using UnityEngine;
+using Managers;
 
 namespace Enemy
 {
@@ -8,9 +9,22 @@ namespace Enemy
 
         public EnemyData EnemyData => m_EnemyData;
 
+        public void Start()
+        {
+            DeathEventManager.OnEnemyDied.AddListener(Died);
+        }
+
         public void AttachData(EnemyData data)
         {
             m_EnemyData = data;
+        }
+
+        public void Died()
+        {
+            if (m_EnemyData.currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

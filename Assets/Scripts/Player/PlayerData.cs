@@ -5,9 +5,9 @@ namespace Player
     public class PlayerData
     {   
         private PlayerView m_PlayerView;
-        private float m_Damage;
+        private WeaponAsset m_Weapon;
         public PlayerView PlayerView => m_PlayerView;
-        public float Damage => m_Damage;
+        public WeaponAsset Weapon => m_Weapon;
 
         public float maxHealth;
         public float currentHealth;
@@ -16,7 +16,7 @@ namespace Player
         public float maxStamina;
         public float currentStamina;
         public float speed;
-
+        
         
 
         public PlayerData(PlayerAsset asset) 
@@ -28,7 +28,7 @@ namespace Player
             maxStamina = asset.maxStamina;
             currentStamina = maxStamina;
             speed = asset.speed;
-            m_Damage = asset.weaponAsset.damage;
+            m_Weapon = asset.WeaponAsset;
 
             m_PlayerView = asset.ViewPrefab;
         }

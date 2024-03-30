@@ -1,16 +1,19 @@
 using Assets;
 using UnityEngine;
+using Managers;
+using Enemy;
+using UnityEditor.VersionControl;
 
 namespace Runtime
 {
-    public class PlayerDamageController : IController
+    public class PlayerGiveDamageController : IController
     {   
         private PlayerSpawnerAsset m_PlayerSpawnerAsset;
         private EnemyTypeAsset m_enemyTypeAsset;
 
         private Animator m_Animator;
 
-        public PlayerDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
+        public PlayerGiveDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
         {
             m_PlayerSpawnerAsset = PlayerSpawnerAsset;
         }
@@ -26,24 +29,31 @@ namespace Runtime
 
         public void OnTick () 
         {
-            Damage(m_PlayerSpawnerAsset.PlayerAsset);
+            GiveDamage();
         }
-
-        private void Damage(PlayerAsset asset)
+        private void GiveDamage()
         {   
             if (Input.GetKeyDown(KeyCode.Mouse0)) 
-            {   
-                if (Game.Runtime.EnemyDatas[0].currentHealth > 0) 
-                {
-                    Debug.Log($"{Game.Runtime.EnemyDatas[0].currentHealth}");
-                    Game.Runtime.EnemyDatas[0].currentHealth -= asset.weaponAsset.damage;
-                    Game.Runtime.EnemyViews[0].AttachData(Game.Runtime.EnemyDatas[0]);
-                }
-                else
-                {
-                    Debug.Log("Enemy Died");
-                }
+            {
+                GetTarget();
+                DeathEventManager.SendEnemyDied();
             }
         }
-    }  
+
+        private void GetTarget()
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(Game.Runtime.PlayerView.transform.Find("AttackPoint").transform.position, Game.Runtime.PlayerData.Weapon.AttackRange, LayerMask.GetMask("Enemies"));
+            
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if (enemy.TryGetComponent(out Enemy.EnemyView view))
+                {
+                    if (Game.Runtime.Enemies.TryGetValue(view, out EnemyData enemyData))
+                    {
+                        enemyData.currentHealth -= m_PlayerSpawnerAsset.PlayerAsset.WeaponAsset.damage;
+                    }
+                }
+            } 
+        }
+    }
 }
