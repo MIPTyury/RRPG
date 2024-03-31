@@ -9,7 +9,7 @@ namespace Enemy
 
         public EnemyData EnemyData => m_EnemyData;
 
-        public void Start()
+        public void Awake()
         {
             DeathEventManager.OnEnemyDied.AddListener(Died);
         }

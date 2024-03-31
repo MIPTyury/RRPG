@@ -39,18 +39,17 @@ namespace Runtime
             }
         }
 
-        //Баг с двойной атакой
+
         private void GetTarget()
         {
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(Game.Runtime.PlayerView.transform.Find("AttackPoint").transform.position, Game.Runtime.PlayerData.Weapon.AttackRange, LayerMask.GetMask("Enemies"));
-            
             foreach (Collider2D enemy in hitEnemies)
             {
                 EnemyView view = enemy.gameObject.GetComponent<EnemyView>();
                 EnemyData data = Game.Runtime.Enemies[view];
                 
                 data.currentHealth -= m_PlayerSpawnerAsset.PlayerAsset.WeaponAsset.damage;
-                Debug.Log($"{view.gameObject.name} - {data.currentHealth} ----- {hitEnemies.Length}");
+                Debug.Log($"{view.gameObject.name} - {data.currentHealth}");
             }
 
             DeathEventManager.SendEnemyDied();
