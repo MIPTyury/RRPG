@@ -7,6 +7,8 @@ namespace Assets
     public class WeaponAsset : ScriptableObject
     {   
         public string m_name;
+        
+        [TextArea] public string description;
 
         public float damage;
 

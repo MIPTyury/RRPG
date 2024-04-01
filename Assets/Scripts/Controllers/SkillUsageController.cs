@@ -1,5 +1,4 @@
 using UnityEngine;
-using Player;
 using Assets;
 using System.Collections.Generic;
 using System;
@@ -77,8 +76,16 @@ namespace Runtime
         {
             if (Input.GetKeyDown(KeyCode.G)) 
             {
-                Game.Runtime.PlayerData.currentHealth -= 40;
-                Debug.Log($"Снялось 40 hp, сейчас {Game.Runtime.PlayerData.currentHealth}/{Game.Runtime.PlayerData.maxHealth} HP");
+                if (Game.Runtime.PlayerData.currentHealth > 40) 
+                {
+                    Game.Runtime.PlayerData.currentHealth -= 40;
+                    Debug.Log($"Снялось 40 hp, сейчас {Game.Runtime.PlayerData.currentHealth}/{Game.Runtime.PlayerData.maxHealth} HP");
+                }
+                else
+                {
+                    Game.Runtime.PlayerData.currentHealth = 0;
+                    Debug.Log($"Снялось 40 hp, сейчас {Game.Runtime.PlayerData.currentHealth}/{Game.Runtime.PlayerData.maxHealth} HP");
+                }
             }
         }
     }

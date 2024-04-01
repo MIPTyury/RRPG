@@ -1,5 +1,4 @@
 using UnityEngine;
-using Enemy;
 
 namespace Assets
 {
@@ -8,6 +7,8 @@ namespace Assets
     {   
         public string m_name;
         public string skillType;
+
+        [TextArea] public string description;
 
         public float damage;
         public float heal;

@@ -1,9 +1,7 @@
 using UnityEngine;
-using Player;
 using Assets;
 using System.Collections.Generic;
 using System;
-using Skills;
 using Weapons;
 
 namespace Runtime
@@ -11,7 +9,6 @@ namespace Runtime
     public class WeaponHolderController : IController
     {
         private WeaponAsset m_WeaponAsset;
-        private Dictionary<string, Action> ModeDict = new();
 
         public WeaponHolderController(PlayerSpawnerAsset PlayerSpawnerAsset)
         {

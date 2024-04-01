@@ -10,11 +10,13 @@ namespace Skills
         private float m_heal;
         private string m_name;
         private string m_type;
+        private string m_description;
 
         public float Damage => m_damage;
         public float Heal => m_heal;
         public string Name => m_name;
         public string Type => m_type;
+        public string Description => m_description;
 
         public SkillData (SkillAsset asset)
         {
@@ -22,6 +24,7 @@ namespace Skills
             m_heal = asset.heal;
             m_name = asset.m_name;
             m_type = asset.skillType;
+            m_description = asset.description;
         }
     }
 }
