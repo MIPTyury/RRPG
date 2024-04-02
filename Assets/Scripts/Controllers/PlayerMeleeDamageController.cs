@@ -7,14 +7,14 @@ using UnityEngine.UIElements;
 
 namespace Runtime
 {
-    public class PlayerGiveDamageController : IController
+    public class PlayerMeleeDamageController : IController
     {   
         private PlayerSpawnerAsset m_PlayerSpawnerAsset;
         private EnemyTypeAsset m_enemyTypeAsset;
 
         private Animator m_Animator;
 
-        public PlayerGiveDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
+        public PlayerMeleeDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
         {
             m_PlayerSpawnerAsset = PlayerSpawnerAsset;
         }

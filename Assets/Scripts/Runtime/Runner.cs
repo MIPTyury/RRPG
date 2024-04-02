@@ -40,7 +40,7 @@ namespace Runtime
                 new PlayerMovementController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new CameraController(),
                 new EnemySpawnController(Game.CurrentLocation.EnemyTypes),
-                new PlayerGiveDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new PlayerMeleeDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new WeaponHolderController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new SkillUsageController(Game.CurrentLocation.PlayerSpawnerAsset),
             };
