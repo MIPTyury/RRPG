@@ -23,7 +23,7 @@ namespace Weapons
         public WeaponData(WeaponAsset asset) 
         {
             m_name = asset.m_name;
-            m_damage = asset.damage;
+            m_damage = asset.weakDamage;
             m_AttackRange = asset.AttackRange;
             m_SkillAsset = asset.SkillAsset;
         }

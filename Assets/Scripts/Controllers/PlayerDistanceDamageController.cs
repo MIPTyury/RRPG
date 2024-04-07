@@ -3,17 +3,17 @@ using UnityEngine;
 using Managers;
 using Enemy;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
 
 namespace Runtime
 {
-    public class PlayerMeleeDamageController : IController
+    public class PlayerDistanceDamageController : IController
     {   
         private PlayerSpawnerAsset m_PlayerSpawnerAsset;
+        private EnemyTypeAsset m_enemyTypeAsset;
 
         private Animator m_Animator;
 
-        public PlayerMeleeDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
+        public PlayerDistanceDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
         {
             m_PlayerSpawnerAsset = PlayerSpawnerAsset;
         }
@@ -33,7 +33,7 @@ namespace Runtime
         }
         private void GiveDamage() 
         {   
-            if (Input.GetKeyDown(KeyCode.Mouse0)) 
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Input.GetKeyDown(KeyCode.LeftShift)) 
             {
                 GetTarget();
             }

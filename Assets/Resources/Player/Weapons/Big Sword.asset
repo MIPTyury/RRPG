@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u041C\u0435\u0447"
   description: 
-  damage: 10
+  weakDamage: 15
+  strongDamage: 25
   AttackRange: 1
   SkillAsset: {fileID: 11400000, guid: d79e947dd54c9aa4e9dd55fb5029558e, type: 2}

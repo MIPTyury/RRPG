@@ -43,6 +43,7 @@ namespace Runtime
                 new PlayerMeleeDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new WeaponHolderController(Game.CurrentLocation.PlayerSpawnerAsset),
                 new SkillUsageController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new PlayerDistanceDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
             };
 
             // Debug.Log($"WEAPON --------- {Game.Runtime.PlayerData.Weapon}");

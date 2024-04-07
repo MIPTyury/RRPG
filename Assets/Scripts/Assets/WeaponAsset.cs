@@ -10,7 +10,8 @@ namespace Assets
         
         [TextArea] public string description;
 
-        public float damage;
+        public float weakDamage;
+        public float strongDamage;
 
         public float AttackRange;
 
