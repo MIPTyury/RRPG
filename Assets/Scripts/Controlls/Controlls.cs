@@ -8,5 +8,7 @@ namespace Utility
         public readonly static KeyCode AttackKey = KeyCode.Mouse0;
         public readonly static KeyCode StrafeKey = KeyCode.Space;
         public readonly static KeyCode SettingsKey = KeyCode.Escape;
+        public readonly static KeyCode UsePotionKey = KeyCode.Q;
+        public readonly static KeyCode ThrowThrowersKey = KeyCode.R;
     }
 }

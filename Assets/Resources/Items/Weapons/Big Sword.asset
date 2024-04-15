@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0957910bca58eb4d9e0317c66e49891, type: 3}
+  m_Script: {fileID: 11500000, guid: dee328fa2fe816742990239301f553c5, type: 3}
   m_Name: Big Sword
   m_EditorClassIdentifier: 
-  m_name: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u041C\u0435\u0447"
-  description: 
-  weakDamage: 15
-  strongDamage: 25
-  AttackRange: 1
-  SkillAsset: {fileID: 11400000, guid: d79e947dd54c9aa4e9dd55fb5029558e, type: 2}
+  Name: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u043C\u0435\u0447"
+  Type: 
+  Value: 15
+  AttackRange: 2
+  Description: 

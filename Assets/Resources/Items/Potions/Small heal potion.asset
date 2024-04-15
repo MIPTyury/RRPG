@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 025a1a80fd0ffa044b980408999e8d61, type: 3}
-  m_Name: TestHeal
+  m_Script: {fileID: 11500000, guid: dee328fa2fe816742990239301f553c5, type: 3}
+  m_Name: Small heal potion
   m_EditorClassIdentifier: 
-  m_name: Heal
-  skillType: Heal
-  damage: 0
-  heal: 20
-  Sprite: {fileID: 21300000, guid: b0bdb94df52e66d41866fb809a3c7af7, type: 3}
+  Name: "\u041C\u0430\u043B\u043E\u0435 \u0437\u0435\u043B\u044C\u0435 \u043B\u0435\u0447\u0435\u043D\u0438\u044F"
+  Type: 
+  Value: 10
+  AttackRange: 0
+  Description: 

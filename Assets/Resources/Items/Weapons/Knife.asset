@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0957910bca58eb4d9e0317c66e49891, type: 3}
-  m_Name: Mage stuff
+  m_Script: {fileID: 11500000, guid: dee328fa2fe816742990239301f553c5, type: 3}
+  m_Name: Knife
   m_EditorClassIdentifier: 
-  m_name: 
-  description: 
-  weakDamage: 5
-  strongDamage: 10
-  weaponType: Range
-  AttackRange: 1
+  Name: "\u041A\u0438\u043D\u0436\u0430\u043B"
+  Type: 
+  Value: 5
+  AttackRange: 0.5
+  Description: 

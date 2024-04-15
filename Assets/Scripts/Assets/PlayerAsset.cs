@@ -1,5 +1,6 @@
 using UnityEngine;
 using Player;
+using System.Collections.Generic;
 
 namespace Assets
 {
@@ -11,7 +12,7 @@ namespace Assets
         public float maxStamina;
         public float speed;
          
-        public WeaponAsset WeaponAsset;
+        public ItemAsset WeaponAsset;
         public PlayerView ViewPrefab;
     }
 }

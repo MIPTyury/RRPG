@@ -48,7 +48,7 @@ namespace Runtime
                 EnemyView view = enemy.GetComponent<EnemyView>();
                 EnemyData data = Game.Runtime.Enemies[view];
                 
-                data.currentHealth -= Game.Runtime.PlayerData.Weapon.weakDamage;
+                data.currentHealth -= Game.Runtime.PlayerData.Weapon.Value;
                 view.AttachData(data);
             }
 

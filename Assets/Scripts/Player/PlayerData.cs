@@ -1,14 +1,21 @@
+using System.Collections.Generic;
 using Assets;
-using Runtime;
 
 namespace Player
 {
     public class PlayerData
     {   
         private PlayerView m_PlayerView;
-        private WeaponAsset m_weapon;
+        private ItemAsset m_weapon;
+
+        private List<ItemAsset> m_Potions;
+        private List<ItemAsset> m_Throwers;
+
         public PlayerView PlayerView => m_PlayerView;
-        public WeaponAsset Weapon => m_weapon;
+        public ItemAsset Weapon => m_weapon;
+
+        public List<ItemAsset> Potions => m_Potions;
+        public List<ItemAsset> Throwers => m_Throwers;
 
         public float maxHealth;
         public float currentHealth;

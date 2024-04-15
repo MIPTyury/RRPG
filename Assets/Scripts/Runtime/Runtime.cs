@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Enemy;
 using Player;
 using UnityEngine;
-using Weapons;
+using Item;
 
 namespace Runtime
 {

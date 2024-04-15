@@ -16,5 +16,5 @@ MonoBehaviour:
   maxMana: 100
   maxStamina: 100
   speed: 7
-  WeaponAsset: {fileID: 11400000, guid: 022c1d2b96e7c9d41b7c3cb959dce845, type: 2}
-  ViewPrefab: {fileID: 8972981598349976560, guid: e21dfb09423781b4b93705d3474c7e6a, type: 3}
+  WeaponAsset: {fileID: 11400000, guid: e1ce87261139daa4b8db50814f6f4c61, type: 2}
+  ViewPrefab: {fileID: 6926600141858018251, guid: cc0cff0812de63244a4d613ce97a58f5, type: 3}

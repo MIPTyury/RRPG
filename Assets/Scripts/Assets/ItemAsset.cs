@@ -1,3 +1,4 @@
+using Item;
 using UnityEngine;
 
 namespace Assets
@@ -5,7 +6,12 @@ namespace Assets
     [CreateAssetMenu(menuName = "Asset/Item Asset", fileName = "Item Asset")]
     public class ItemAsset : ScriptableObject
     {   
-        public ScriptableObject ItemTypeAsset;
-        
+        public string Name;
+        public string Type;
+        public float Value;
+        public float AttackRange;
+        [TextArea] public string Description;
+
+        public IItemView ItemView;
     }
 }
