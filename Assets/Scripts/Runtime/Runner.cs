@@ -36,17 +36,11 @@ namespace Runtime
         {
             m_Controllers = new List<IController>()
             {
-                new PlayerSpawnController(Game.CurrentLocation.PlayerSpawnerAsset),
-                new PlayerMovementController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new InitRuntimeController(Game.CurrentLocation),
+                new PlayerMovementController(),
                 new CameraController(),
-                new EnemySpawnController(Game.CurrentLocation.EnemyTypes),
-                new PlayerMeleeDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
-                new WeaponHolderController(Game.CurrentLocation.PlayerSpawnerAsset),
-                new SkillUsageController(Game.CurrentLocation.PlayerSpawnerAsset),
-                new PlayerDistanceDamageController(Game.CurrentLocation.PlayerSpawnerAsset),
+                new PlayerMeleeDamageController(),
             };
-
-            // Debug.Log($"WEAPON --------- {Game.Runtime.PlayerData.Weapon}");
         }
 
         private void OnStartControllers()
@@ -97,7 +91,7 @@ namespace Runtime
         //Для проверки работоспособности, потом убрать!!!
         public void SpawnEnemy()
         {
-            m_Controllers[3].OnStart();
+            m_Controllers[0].OnStart();
         }
     }
 }

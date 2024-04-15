@@ -8,7 +8,7 @@ namespace Assets
     public class LocationAsset : ScriptableObject
     {   
         public SceneAsset SceneAsset;
-        public PlayerSpawnerAsset PlayerSpawnerAsset;
-        public List<EnemyTypeAsset> EnemyTypes;
+        public PlayerAsset PlayerAsset;
+        public List<EnemyAsset> EnemyTypes;
     }
 }

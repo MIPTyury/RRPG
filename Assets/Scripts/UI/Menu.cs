@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runtime
 {
-    public class GameStarter : MonoBehaviour
+    public class Menu : MonoBehaviour
     {
         [SerializeField]
         private AssetRoot m_AssetRoot;
@@ -13,11 +13,9 @@ namespace Runtime
             Game.SetAssetRoot(m_AssetRoot);
         }
 
-        private void Update()
+        public void StartGame()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0)) {
-                Game.InitCurrentLocation(m_AssetRoot.Locations[0]);
-            }
+            Game.InitCurrentLocation(m_AssetRoot.Locations[0]);
         }
     }
 }

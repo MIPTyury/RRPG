@@ -1,21 +1,19 @@
-using Assets;
 using UnityEngine;
 using Managers;
 using Enemy;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
+using Utility;
 
 namespace Runtime
 {
     public class PlayerMeleeDamageController : IController
     {   
-        private PlayerSpawnerAsset m_PlayerSpawnerAsset;
 
         private Animator m_Animator;
 
-        public PlayerMeleeDamageController (PlayerSpawnerAsset PlayerSpawnerAsset)
+        public PlayerMeleeDamageController ()
         {
-            m_PlayerSpawnerAsset = PlayerSpawnerAsset;
+
         }
         public void OnStart() 
         {
@@ -33,7 +31,7 @@ namespace Runtime
         }
         private void GiveDamage() 
         {   
-            if (Input.GetKeyDown(KeyCode.Mouse0)) 
+            if (Input.GetKeyDown(Controlls.AttackKey)) 
             {
                 GetTarget();
             }
@@ -45,14 +43,13 @@ namespace Runtime
             
             List<GameObject> enemies = GetUnique(hitEnemies);
 
-            foreach (GameObject enemy in enemies)
+            foreach (var enemy in enemies)
             {
                 EnemyView view = enemy.GetComponent<EnemyView>();
                 EnemyData data = Game.Runtime.Enemies[view];
                 
-                data.currentHealth -= m_PlayerSpawnerAsset.PlayerAsset.WeaponAsset.weakDamage;
+                data.currentHealth -= Game.Runtime.PlayerData.Weapon.weakDamage;
                 view.AttachData(data);
-                Debug.Log($"{view.gameObject.name} - {data.currentHealth}");
             }
 
             DeathEventManager.SendEnemyDied();
@@ -62,7 +59,7 @@ namespace Runtime
         {
             HashSet<GameObject> uniqueObjects = new HashSet<GameObject>();
 
-            foreach (Collider2D collider in list)
+            foreach (var collider in list)
             {
                 uniqueObjects.Add(collider.gameObject);
             }

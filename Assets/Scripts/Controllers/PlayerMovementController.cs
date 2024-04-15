@@ -6,14 +6,11 @@ namespace Runtime
 {
     public class PlayerMovementController : IController
     {   
-        private PlayerSpawnerAsset m_PlayerSpawnerAsset;
         private Animator m_Animator;
         private Dictionary<Vector2, int> angleToMoveDirection = new Dictionary<Vector2, int>();
 
-        public PlayerMovementController (PlayerSpawnerAsset PlayerSpawnerAsset)
+        public PlayerMovementController ()
         {
-            m_PlayerSpawnerAsset = PlayerSpawnerAsset;
-
             float[] angles = { 337.5f, 292.5f, 247.5f, 202.5f, 157.5f, 112.5f, 67.5f, 22.5f };
             for (int i = 0; i < angles.Length; i++)
             {
@@ -32,10 +29,10 @@ namespace Runtime
 
         public void OnTick () 
         {
-            MovePlayer(m_PlayerSpawnerAsset.PlayerAsset);
+            MovePlayer();
         }
 
-        private void MovePlayer(PlayerAsset asset)
+        private void MovePlayer()
         {   
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
@@ -43,7 +40,7 @@ namespace Runtime
 
             SetMoveDirectionParameter(moveDir);
 
-            Game.Runtime.PlayerView.transform.Translate(moveDir * asset.speed * Time.deltaTime);
+            Game.Runtime.PlayerView.transform.Translate(moveDir * Game.Runtime.PlayerData.speed * Time.deltaTime);
         }
 
         private void SetMoveDirectionParameter(Vector3 moveDir)
