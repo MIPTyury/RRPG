@@ -1,14 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor;
 
 namespace Assets
 {
     [CreateAssetMenu(menuName = "Asset/Location Asset", fileName = "Location Asset")]
     public class LocationAsset : ScriptableObject
     {   
-        public SceneAsset SceneAsset;
+        public string SceneAsset;
         public PlayerAsset PlayerAsset;
         public List<EnemyAsset> EnemyTypes;
+
+        public List<ItemAsset> Items;
     }
 }

@@ -17,5 +17,11 @@ namespace Runtime
         {
             Game.InitCurrentLocation(m_AssetRoot.Locations[0]);
         }
+
+        public void ExitGame()
+        {
+            Debug.Log("Exited game");
+            Application.Quit();
+        }
     }
 }

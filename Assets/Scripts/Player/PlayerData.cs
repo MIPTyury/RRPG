@@ -35,6 +35,9 @@ namespace Player
             currentStamina = maxStamina;
             speed = asset.speed;
             m_weapon = asset.WeaponAsset;
+            
+            m_Potions = asset.Potions;
+            m_Throwers = asset.Throwers;
 
             m_PlayerView = asset.ViewPrefab;
         }

@@ -25,7 +25,7 @@ namespace Runtime
         public static void InitCurrentLocation(LocationAsset locationAsset)
         {
             s_CurrentLocation = locationAsset;
-            AsyncOperation operation = SceneManager.LoadSceneAsync(locationAsset.SceneAsset.name);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(locationAsset.SceneAsset);
             operation.completed += StartRuntime;
         }
 

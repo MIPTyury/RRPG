@@ -17,4 +17,7 @@ MonoBehaviour:
   maxStamina: 100
   speed: 7
   WeaponAsset: {fileID: 11400000, guid: e1ce87261139daa4b8db50814f6f4c61, type: 2}
+  Potions:
+  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
+  Throwers: []
   ViewPrefab: {fileID: 6926600141858018251, guid: cc0cff0812de63244a4d613ce97a58f5, type: 3}

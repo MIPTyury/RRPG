@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b649ba5f021c8a45afbed43fc91ecda, type: 3}
   m_Name: Location
   m_EditorClassIdentifier: 
-  SceneAsset: {fileID: 102900000, guid: 301295fa4fbb007428fc588b83a32028, type: 3}
+  SceneAsset: Location 1
   PlayerAsset: {fileID: 11400000, guid: d9754668248177e498bcf0e6b9794e70, type: 2}
   EnemyTypes:
   - {fileID: 11400000, guid: d450edfe904b67f4bbfcf692d7e1509f, type: 2}
   - {fileID: 11400000, guid: 197bb019f562bdb45b6168f4e254d8a7, type: 2}
+  Items:
+  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
+  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
+  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
+  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}

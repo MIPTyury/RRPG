@@ -13,6 +13,9 @@ namespace Assets
         public float speed;
          
         public ItemAsset WeaponAsset;
+
+        public List<ItemAsset> Potions;
+        public List<ItemAsset> Throwers;
         public PlayerView ViewPrefab;
     }
 }

@@ -12,6 +12,6 @@ namespace Assets
         public float AttackRange;
         [TextArea] public string Description;
 
-        public IItemView ItemView;
+        [SerializeField] public IItemView ItemView;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Small heal potion
   m_EditorClassIdentifier: 
   Name: "\u041C\u0430\u043B\u043E\u0435 \u0437\u0435\u043B\u044C\u0435 \u043B\u0435\u0447\u0435\u043D\u0438\u044F"
-  Type: 
+  Type: Heal
   Value: 10
   AttackRange: 0
   Description: 
