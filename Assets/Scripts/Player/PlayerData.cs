@@ -8,8 +8,8 @@ namespace Player
         private PlayerView m_PlayerView;
         private ItemAsset m_weapon;
 
-        private List<ItemAsset> m_Potions;
-        private List<ItemAsset> m_Throwers;
+        private List<ItemAsset> m_Potions = new List<ItemAsset>();
+        private List<ItemAsset> m_Throwers = new List<ItemAsset>();
 
         public PlayerView PlayerView => m_PlayerView;
         public ItemAsset Weapon => m_weapon;
@@ -36,8 +36,8 @@ namespace Player
             speed = asset.speed;
             m_weapon = asset.WeaponAsset;
             
-            m_Potions = asset.Potions;
-            m_Throwers = asset.Throwers;
+            m_Potions = new List<ItemAsset>(asset.Potions);
+            m_Throwers = new List<ItemAsset>(asset.Throwers);
 
             m_PlayerView = asset.ViewPrefab;
         }

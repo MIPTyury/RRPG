@@ -10,5 +10,7 @@ namespace Utility
         public readonly static KeyCode SettingsKey = KeyCode.Escape;
         public readonly static KeyCode UsePotionKey = KeyCode.Q;
         public readonly static KeyCode ThrowThrowersKey = KeyCode.R;
+
+        public readonly static KeyCode DebugDamage = KeyCode.Tab;
     }
 }

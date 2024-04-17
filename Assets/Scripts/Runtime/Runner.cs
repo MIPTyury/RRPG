@@ -40,6 +40,7 @@ namespace Runtime
                 new PlayerMovementController(),
                 new CameraController(),
                 new PlayerMeleeDamageController(),
+                new PotionUsageController(),
             };
         }
 
