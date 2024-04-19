@@ -1,6 +1,7 @@
 using UnityEngine;
 using Managers;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using Item;
 
 namespace Player
 {
@@ -9,6 +10,9 @@ namespace Player
         private PlayerData m_PlayerData;
 
         public PlayerData PlayerData => m_PlayerData;
+
+        public List<PotionView> Potions;
+        public List<PotionView> Throwers;
 
         public void Awake()
         {
@@ -26,6 +30,11 @@ namespace Player
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void SetPotionView(List<PotionView> view)
+        {
+            Potions = view;
         }
         
         void OnDrawGizmosSelected()

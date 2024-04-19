@@ -11,7 +11,8 @@ namespace Assets
         public float Value;
         public float AttackRange;
         [TextArea] public string Description;
+        public Vector3 Position;
 
-        [SerializeField] public IItemView ItemView;
+        [SerializeField] public PotionView PotionView;
     }
 }

@@ -12538,6 +12538,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7136731616387652878, guid: c895e0527cdb7cc4197c0a4fe44587cc, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 1928949659}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

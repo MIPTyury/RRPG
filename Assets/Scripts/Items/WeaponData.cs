@@ -2,7 +2,7 @@ using Assets;
 
 namespace Item
 {
-    public class WeaponData : IItemData
+    public class WeaponData
     {
         private WeaponView m_WeaponView;
         private string m_Name;

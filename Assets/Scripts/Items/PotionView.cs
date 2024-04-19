@@ -1,21 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Item
 {
-    public class PotionView : MonoBehaviour, IItemView 
+    public class PotionView : MonoBehaviour
     {
-        private PotionData m_PotionData;
-        
-        public PotionData PotionData => m_PotionData;
+        public PotionData PotionData { get; private set; }
 
         public PotionView (PotionData data)
         {
-           m_PotionData = data;
+           PotionData = data;
         }
 
         public void AttachData(PotionData data)
         {
-            m_PotionData = data;
+            PotionData = data;
         }
     }
 }

@@ -3,6 +3,8 @@ using Enemy;
 using Player;
 using UnityEngine;
 using Item;
+using Assets;
+using System.Linq;
 
 namespace Runtime
 {
@@ -36,6 +38,26 @@ namespace Runtime
         public void SetWeapon(WeaponData weapon)
         {
             m_WeaponData.Add(weapon);
+        }
+
+        public void InitPotions(PlayerAsset asset)
+        {
+            GetPotionData(asset);
+        }
+
+        private void GetPotionData(PlayerAsset asset)
+        {   
+            List<PotionData> data = new List<PotionData>();
+            List<PotionView> view = new List<PotionView>();
+
+            foreach (ItemAsset element in asset.Potions)
+            {
+                data.Add(new PotionData(element));
+                view.Add(new PotionView(data.Last()));
+            }
+
+            Game.Runtime.PlayerData.SetPotionData(data);
+            Game.Runtime.PlayerView.SetPotionView(view);
         }
     }
 }

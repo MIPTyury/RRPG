@@ -41,6 +41,7 @@ namespace Runtime
                 new CameraController(),
                 new PlayerMeleeDamageController(),
                 new PotionUsageController(),
+                new PickUpItemController(),
             };
         }
 

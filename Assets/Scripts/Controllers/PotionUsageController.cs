@@ -1,4 +1,6 @@
 using System.Linq;
+using Item;
+using Unity.VisualScripting;
 using UnityEngine;
 using Utility;
 
@@ -24,14 +26,14 @@ namespace Runtime
         {
             if (Input.GetKeyDown(Controlls.UsePotionKey))
             {
-                Debug.Log($"До применения - {Game.Runtime.PlayerData.Potions.Count} зелий");
+                // Debug.Log($"До применения - {Game.Runtime.PlayerData.Potions.Count} зелий");
                 UsePotion();
             }
 
             if (Input.GetKeyDown(Controlls.DebugDamage))
             {
                 Game.Runtime.PlayerData.currentHealth -= 10;
-                Debug.Log($"После уменьшения стало - {Game.Runtime.PlayerData.currentHealth}");
+                // Debug.Log($"После уменьшения стало - {Game.Runtime.PlayerData.currentHealth}");
             }
         }
 
@@ -39,9 +41,9 @@ namespace Runtime
         {
             if (IsPotionAcessable())
             {
-                Debug.Log($"Было - {Game.Runtime.PlayerData.currentHealth}");
+                // Debug.Log($"Было - {Game.Runtime.PlayerData.currentHealth}");
                 ExecutePotionEffect();
-                Debug.Log($"Стало - {Game.Runtime.PlayerData.currentHealth}");
+                // Debug.Log($"Стало - {Game.Runtime.PlayerData.currentHealth}");
             }
         }
 
@@ -57,6 +59,7 @@ namespace Runtime
 
         private void Heal()
         {
+            Debug.Log($"Всего зелий {Game.Runtime.PlayerData.Potions.Count}");
             Game.Runtime.PlayerData.currentHealth += Game.Runtime.PlayerData.Potions.Last().Value;
             Game.Runtime.PlayerData.Potions.Remove(Game.Runtime.PlayerData.Potions.Last());
 

@@ -16,6 +16,8 @@ namespace Runtime
 
             SpawnPlayer();
             SpawnAllEnemies();
+            Game.Runtime.InitPotions(m_LocationAsset.PlayerAsset);
+            SpawnAllPotions();
         }
         public void OnStart() 
         {
@@ -67,6 +69,22 @@ namespace Runtime
             WeaponData data = new WeaponData(m_LocationAsset.PlayerAsset.WeaponAsset);
 
             Game.Runtime.SetWeapon(data);
+        }
+
+        public void SpawnAllPotions()
+        {
+            foreach (ItemAsset item in m_LocationAsset.Items)
+            {
+                SpawnPotion(item);
+            }
+        }
+        public void SpawnPotion(ItemAsset asset)
+        {
+            PotionView view = Object.Instantiate(asset.PotionView);
+            view.transform.position = asset.Position;
+            PotionData data = new(asset);
+
+            data.AttachView(view);
         }
     }
 }

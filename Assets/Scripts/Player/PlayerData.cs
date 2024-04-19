@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using Assets;
+using Item;
+using Runtime;
 
 namespace Player
 {
@@ -7,15 +10,11 @@ namespace Player
     {   
         private PlayerView m_PlayerView;
         private ItemAsset m_weapon;
-
-        private List<ItemAsset> m_Potions = new List<ItemAsset>();
-        private List<ItemAsset> m_Throwers = new List<ItemAsset>();
-
         public PlayerView PlayerView => m_PlayerView;
         public ItemAsset Weapon => m_weapon;
 
-        public List<ItemAsset> Potions => m_Potions;
-        public List<ItemAsset> Throwers => m_Throwers;
+        public List<PotionData> Potions = new List<PotionData>();
+        public List<PotionData> Throwers = new List<PotionData>();
 
         public float maxHealth;
         public float currentHealth;
@@ -35,10 +34,6 @@ namespace Player
             currentStamina = maxStamina;
             speed = asset.speed;
             m_weapon = asset.WeaponAsset;
-            
-            m_Potions = new List<ItemAsset>(asset.Potions);
-            m_Throwers = new List<ItemAsset>(asset.Throwers);
-
             m_PlayerView = asset.ViewPrefab;
         }
 
@@ -48,5 +43,9 @@ namespace Player
             m_PlayerView.AttachData(this);
         }
 
+        public void SetPotionData(List<PotionData> data)
+        {
+            Potions = data;
+        }
     }
 }

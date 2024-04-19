@@ -2,7 +2,7 @@ using Assets;
 
 namespace Item
 {
-    public class ThrowerData : IItemData
+    public class ThrowerData
     {
         private string m_Name;
         private string m_Type;

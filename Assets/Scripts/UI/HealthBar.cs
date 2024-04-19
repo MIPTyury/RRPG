@@ -8,7 +8,6 @@ namespace Runtime
     public class HealthBar : MonoBehaviour
     {
         public Slider healthSlider;
-        public GameObject Canvas;
 
         public float health = 0;
         public float maxHealth = 0;
@@ -28,7 +27,7 @@ namespace Runtime
             if (health <= 0)
             {
                 AsyncOperation operation = SceneManager.LoadSceneAsync(0);
-                DeathEventManager.SendEnemyDied();              
+                DeathEventManager.SendEnemyDied();           
             }
         }
     }
