@@ -16,12 +16,12 @@ MonoBehaviour:
   maxMana: 100
   maxStamina: 100
   speed: 7
-  WeaponAsset: {fileID: 11400000, guid: e1ce87261139daa4b8db50814f6f4c61, type: 2}
+  WeaponAsset: {fileID: 11400000, guid: cfe10aeceb1100541a8d5d09a96ef3f5, type: 2}
   Potions:
-  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
-  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
-  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
-  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
-  - {fileID: 11400000, guid: 1d5a00fe3927e3b4aaa0ebdc224207b8, type: 2}
+  - {fileID: 11400000, guid: 658171edc3217264f87f5a2f626a7c6f, type: 2}
+  - {fileID: 11400000, guid: 658171edc3217264f87f5a2f626a7c6f, type: 2}
+  - {fileID: 11400000, guid: 658171edc3217264f87f5a2f626a7c6f, type: 2}
+  - {fileID: 11400000, guid: 658171edc3217264f87f5a2f626a7c6f, type: 2}
+  - {fileID: 11400000, guid: 658171edc3217264f87f5a2f626a7c6f, type: 2}
   Throwers: []
-  ViewPrefab: {fileID: 6926600141858018251, guid: cc0cff0812de63244a4d613ce97a58f5, type: 3}
+  ViewPrefab: {fileID: 6217593777858581102, guid: bb39220748a6edc458f0276f3757c93c, type: 3}

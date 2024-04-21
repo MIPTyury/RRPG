@@ -4,7 +4,7 @@ using Player;
 using UnityEngine;
 using Item;
 using Assets;
-using System.Linq;
+// using System.Linq;
 
 namespace Runtime
 {
@@ -48,16 +48,13 @@ namespace Runtime
         private void GetPotionData(PlayerAsset asset)
         {   
             List<PotionData> data = new List<PotionData>();
-            List<PotionView> view = new List<PotionView>();
 
-            foreach (ItemAsset element in asset.Potions)
+            foreach (PotionAsset element in asset.Potions)
             {
                 data.Add(new PotionData(element));
-                view.Add(new PotionView(data.Last()));
             }
 
             Game.Runtime.PlayerData.SetPotionData(data);
-            Game.Runtime.PlayerView.SetPotionView(view);
         }
     }
 }

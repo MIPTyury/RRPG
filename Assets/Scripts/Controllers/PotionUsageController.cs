@@ -35,6 +35,12 @@ namespace Runtime
                 Game.Runtime.PlayerData.currentHealth -= 10;
                 // Debug.Log($"После уменьшения стало - {Game.Runtime.PlayerData.currentHealth}");
             }
+
+            if (Input.GetKeyDown(Controlls.DebugIncreaseMaxHealth))
+            {
+                Game.Runtime.PlayerData.maxHealth += 20;
+                // Debug.Log($"После уменьшения стало - {Game.Runtime.PlayerData.currentHealth}");
+            }
         }
 
         private void UsePotion ()

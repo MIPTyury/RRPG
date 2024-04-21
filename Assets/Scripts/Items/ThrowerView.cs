@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Item
 {
-    public class ThrowerView : MonoBehaviour
+    public class ThrowerView : BaseItemView
     {
         private ThrowerData m_ThrowerData;
         

@@ -1,20 +1,21 @@
 using System.Collections.Generic;
-using System.Linq;
 using Assets;
 using Item;
-using Runtime;
+using Perk;
 
 namespace Player
 {
     public class PlayerData
     {   
         private PlayerView m_PlayerView;
-        private ItemAsset m_weapon;
+        private WeaponAsset m_weapon;
         public PlayerView PlayerView => m_PlayerView;
-        public ItemAsset Weapon => m_weapon;
+        public WeaponAsset Weapon => m_weapon;
 
         public List<PotionData> Potions = new List<PotionData>();
-        public List<PotionData> Throwers = new List<PotionData>();
+        public List<ThrowerData> Throwers = new List<ThrowerData>();
+
+        public List<PerkData> Perks = new List<PerkData>();
 
         public float maxHealth;
         public float currentHealth;

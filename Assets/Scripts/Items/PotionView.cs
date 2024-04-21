@@ -1,9 +1,8 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Item
 {
-    public class PotionView : MonoBehaviour
+    public class PotionView : BaseItemView
     {
         public PotionData PotionData { get; private set; }
 

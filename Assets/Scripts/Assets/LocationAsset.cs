@@ -10,6 +10,7 @@ namespace Assets
         public PlayerAsset PlayerAsset;
         public List<EnemyAsset> EnemyTypes;
 
-        public List<ItemAsset> Items;
+        [Header("Предметы")]
+        public List<PotionAsset> Potions;
     }
 }

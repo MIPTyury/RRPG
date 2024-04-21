@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Item
 {
-    public class WeaponView : MonoBehaviour
+    public class WeaponView : BaseItemView
     {
         private WeaponData m_WeaponData;
         
