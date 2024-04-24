@@ -12,5 +12,6 @@ namespace Utility
         public readonly static KeyCode ThrowThrowersKey = KeyCode.R;
 
         public readonly static KeyCode DebugDamage = KeyCode.Tab;
+        public readonly static KeyCode DebugIncreaseMaxHealth = KeyCode.H;
     }
 }

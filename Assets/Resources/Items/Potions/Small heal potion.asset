@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee328fa2fe816742990239301f553c5, type: 3}
+  m_Script: {fileID: 11500000, guid: b1f2760e7394cfa4aa0e8e70d93fae23, type: 3}
   m_Name: Small heal potion
   m_EditorClassIdentifier: 
   Name: "\u041C\u0430\u043B\u043E\u0435 \u0437\u0435\u043B\u044C\u0435 \u043B\u0435\u0447\u0435\u043D\u0438\u044F"
   Type: Heal
   Value: 10
-  AttackRange: 0
   Description: 
   Position: {x: 16, y: 6, z: 0}
   PotionView: {fileID: 2674456014979298267, guid: d1bc83ac0ba74a74bbefaf4530624666, type: 3}

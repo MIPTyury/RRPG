@@ -1,25 +1,17 @@
-using Assets;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Runtime
 {
     public class PlayerMovementController : IController
     {   
         private Animator m_Animator;
-        private Dictionary<Vector2, int> angleToMoveDirection = new Dictionary<Vector2, int>();
-
-        public PlayerMovementController ()
-        {
-            float[] angles = { 337.5f, 292.5f, 247.5f, 202.5f, 157.5f, 112.5f, 67.5f, 22.5f };
-            for (int i = 0; i < angles.Length; i++)
-            {
-                angleToMoveDirection[new Vector2(angles[(i + 1) % angles.Length], angles[i])] = (i + 3) % 8;
-            }
-        }
+        private Vector2 Direction;
+        private Vector3 MotionDirection;
+        private Rigidbody2D rigidbody2D;
         public void OnStart() 
         {
             m_Animator = Game.Runtime.PlayerView.GetComponent<Animator>();
+            rigidbody2D = Game.Runtime.PlayerView.GetComponent<Rigidbody2D>();
         }
 
         public void OnStop() 
@@ -36,46 +28,24 @@ namespace Runtime
         {   
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
-            Vector3 moveDir = new Vector3(moveX, moveY, 0).normalized;
+            Direction.x = moveX;
+            Direction.y = moveY;
+            MotionDirection.x = moveX;
+            MotionDirection.y = moveY;
+            MotionDirection.z = 0;
+            MotionDirection = MotionDirection.normalized;
 
-            SetMoveDirectionParameter(moveDir);
+            float speed = Direction.sqrMagnitude;
 
-            Game.Runtime.PlayerView.transform.Translate(moveDir * Game.Runtime.PlayerData.speed * Time.deltaTime);
-        }
+            m_Animator.SetFloat("Horizontal", moveX);
+            m_Animator.SetFloat("Vertical", moveY);
+            m_Animator.SetFloat("Speed", speed);
 
-        private void SetMoveDirectionParameter(Vector3 moveDir)
-        {
-            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-            angle = (angle < 0) ? angle + 360 : angle;
+            Vector3 Pos = Game.Runtime.PlayerView.transform.position;
+            Vector3 NewPos = Pos + Game.Runtime.PlayerData.speed * Time.fixedDeltaTime * MotionDirection;
 
-            int moveDirectionValue = GetMoveDirectionValue(angle);
-
-            if (moveDir.y == 0  && moveDir.x == 0)
-            {
-                moveDirectionValue = 0;
-                m_Animator.SetInteger("Dir", moveDirectionValue);
-                return;
-            }
-
-            m_Animator.SetInteger("Dir", moveDirectionValue);
-        }
-
-        private int GetMoveDirectionValue(float angle)
-        {   
-            if (angle == 0)
-            {
-                return 2;
-            }
-
-            foreach (var entry in angleToMoveDirection)
-            {   
-                if (angle >= entry.Key.x && angle < entry.Key.y)
-                {
-                    return entry.Value;
-                }
-            }
-
-            return 0;
+            rigidbody2D.MovePosition(rigidbody2D.position + Direction.normalized*Game.Runtime.PlayerData.speed*Time.fixedDeltaTime);
+            // Game.Runtime.PlayerView.transform.position = Vector3.MoveTowards(Pos, NewPos, Time.deltaTime * Game.Runtime.PlayerData.speed);
         }
     }
     

@@ -14,11 +14,12 @@ namespace Item
 
         public PotionView potionView;
 
-        public PotionData (ItemAsset asset)
+        public PotionData (PotionAsset asset)
         {
             m_Name = asset.Name;
             m_Type = asset.Type;
             m_Value = asset.Value;
+            potionView = asset.PotionView;
         }
 
         public void AttachView(PotionView view)

@@ -2,6 +2,7 @@ using UnityEngine;
 using Managers;
 using System.Collections.Generic;
 using Item;
+using Runtime;
 
 namespace Player
 {
@@ -37,9 +38,11 @@ namespace Player
             Potions = view;
         }
         
-        void OnDrawGizmosSelected()
+        void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.Find("AttackPoint").transform.position, m_PlayerData.Weapon.AttackRange);
+            
         }
+        
+
     }
 }

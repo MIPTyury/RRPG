@@ -73,12 +73,12 @@ namespace Runtime
 
         public void SpawnAllPotions()
         {
-            foreach (ItemAsset item in m_LocationAsset.Items)
+            foreach (PotionAsset item in m_LocationAsset.Potions)
             {
                 SpawnPotion(item);
             }
         }
-        public void SpawnPotion(ItemAsset asset)
+        public void SpawnPotion(PotionAsset asset)
         {
             PotionView view = Object.Instantiate(asset.PotionView);
             view.transform.position = asset.Position;

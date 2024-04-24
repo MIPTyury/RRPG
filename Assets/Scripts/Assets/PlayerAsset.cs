@@ -12,9 +12,9 @@ namespace Assets
         public float maxStamina;
         public float speed;
          
-        public ItemAsset WeaponAsset;
+        public WeaponAsset WeaponAsset;
 
-        public List<ItemAsset> Potions;
+        public List<PotionAsset> Potions;
         public List<ItemAsset> Throwers;
         public PlayerView ViewPrefab;
     }
