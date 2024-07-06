@@ -12,7 +12,7 @@ namespace Runtime
     {   
 
         private Animator m_Animator;
-        public float slashDuration = 0.2f;
+        public float slashDuration = 1f;
 
         public PlayerMeleeDamageController ()
         {

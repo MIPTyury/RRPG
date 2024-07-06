@@ -2,6 +2,8 @@ using Managers;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 namespace Runtime
 {
@@ -14,6 +16,8 @@ namespace Runtime
         public float maxHealth = 0;
 
         private float previousMaxHealth = 100f;
+
+        private bool isDead = false;
 
         private void Update()
         {
@@ -37,12 +41,29 @@ namespace Runtime
                 healthSlider.value = health;
             }
 
-            if (health <= 0)
-            {
-                AsyncOperation operation = SceneManager.LoadSceneAsync(0);
-                DeathEventManager.SendEnemyDied();           
+            if (health <= 0 && !isDead)
+            {   
+                isDead = true;
+                DeathEventManager.SendEnemyDied();          
             }
         }
+
+        private IEnumerator HandleDeath()
+            {
+                // Send enemy died event
+                AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+                //yield return new WaitUntil(() => operation.isDone);
+
+                // Wait for 1 second
+                Debug.Log("before delayed");
+                yield return new WaitForSeconds(1);
+
+                // Load the scene asynchronously
+                Debug.Log("delayed");
+                AsyncOperation operation1 = SceneManager.LoadSceneAsync(0);
+                DeathEventManager.SendEnemyDied();
+                // Optionally handle the operation (e.g., show loading screen)
+            }
 
         private void UpdateHealthBarSize(float maxHealth)
         {

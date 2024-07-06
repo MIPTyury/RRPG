@@ -3,6 +3,9 @@ using Managers;
 using System.Collections.Generic;
 using Item;
 using Runtime;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 namespace Player
 {
@@ -25,14 +28,26 @@ namespace Player
             m_PlayerData = data;
         }
 
-        public void Died()
+public void Died()
         {
-            if (m_PlayerData.currentHealth <= 0)
+            if (Game.Runtime.PlayerData.currentHealth <= 0)
             {
+                HandleDeathAsync(); // Call the async method directly
                 Destroy(gameObject);
             }
         }
 
+        private async void HandleDeathAsync()
+        {
+            // Send enemy died event
+            AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+
+            await Task.Delay(1000); // Wait asynchronously for 1 second
+
+            // Load the scene asynchronously
+            AsyncOperation operation1 = SceneManager.LoadSceneAsync(0);
+            // Optionally handle the operation (e.g., show loading screen)
+        }
         public void SetPotionView(List<PotionView> view)
         {
             Potions = view;
